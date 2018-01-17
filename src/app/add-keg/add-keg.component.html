@@ -1,0 +1,38 @@
+<button type="button" class="btn btn-success mb-2" *ngIf="!display" (click)="toggleDisplay()">Show Form</button>
+<div>
+  <form *ngIf="display">
+    <div class="form-group">
+      <label>Keg:</label>
+      <input type="text" class="form-control" #kegName/>
+    </div>
+    <div class="form-group">
+      <label>Brand:</label>
+      <input type="text" class="form-control" #brand />
+    </div>
+    <div class="form-group">
+      <label>Style:</label>
+      <input type="text" class="form-control" #style />
+    </div>
+    <div class="form-group">
+      <label>Alcohol Content:</label>
+      <input type="text" class="form-control" #alcohol />
+    </div>
+    <div class="form-group">
+      <label>Price:</label>
+      <input type="number" class="form-control" #price />
+    </div>
+    <div class="form-group">
+      <label>Quantity:</label>
+      <input type="text" class="form-control" #quantity />
+    </div>
+    <button type='button' class="btn btn-primary" (click)="add(kegName.value, brand.value, style.value, alcohol.value, price.value, quantity.value);
+    kegName.value='';
+    brand.value='';
+    style.value='';
+    alcohol.value='';
+    price.value='';
+    quantity.value=''">
+      Add this keg
+    </button>
+  </form>
+</div>

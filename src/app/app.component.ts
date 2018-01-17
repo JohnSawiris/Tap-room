@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { AddKegComponent } from './add-keg/add-keg.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tap-Room';
-  display: boolean = false;
   kegs: Keg[] = [
     new Keg('10 Barrel Baroque Pearl', '10 Barrel Brewing', 'Hazy IPA', 200, 6.4, 120),
     new Keg('Aleson Blending Dubbel', 'Alesong Brewing', 'Belgian-Style Dubbel', 20, 7.1, 120),
@@ -17,15 +18,6 @@ export class AppComponent {
     new Keg('Firestone Walker 805', 'Firestone Walker Brewing Company', 'Blonde Ale', 200, 4.7, 1200)
   ];
 
-  toggleDisplay() {
-    this.display = !this.display;
-  }
-
-  add(name, brand, style, price, alcohol, qty){
-    const newKeg = new Keg(name, brand, style, price, alcohol, qty);
-    this.kegs.push(newKeg)
-    this.toggleDisplay();
-  }
 }
 
 export class Keg {
