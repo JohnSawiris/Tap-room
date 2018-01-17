@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Keg, AppComponent } from '../app.component';
+import { Keg } from '../app.component';
 
 @Component({
   selector: 'app-add-keg',
