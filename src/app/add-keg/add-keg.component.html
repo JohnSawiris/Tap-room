@@ -1,5 +1,8 @@
-<button type="button" class="btn btn-success mb-2" *ngIf="!display" (click)="toggleDisplay()">Show Form</button>
-<div>
+<button type="button" class="btn btn-success mb-2"
+*ngIf="!display"
+(click)="toggleDisplay()">Add a new Keg</button>
+<div id="addKegForm">
+  <div class="mb-3">
   <form *ngIf="display">
     <div class="form-group">
       <label>Keg:</label>
@@ -34,5 +37,7 @@
     quantity.value=''">
       Add this keg
     </button>
+    <button type="button" class="btn btn-danger" name="button" (click)="toggleDisplay()">Close</button>
   </form>
+</div>
 </div>

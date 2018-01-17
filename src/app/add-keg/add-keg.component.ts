@@ -10,8 +10,7 @@ import { Keg } from '../app.component';
 export class AddKegComponent implements OnInit {
 
   @Input() kegs;
-
-  display: boolean = false;
+  @Input() display;
 
   constructor() { }
 
