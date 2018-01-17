@@ -2,15 +2,14 @@
   <h1>Welcome to {{title}}</h1>
   <app-add-keg [kegs]="kegs"></app-add-keg>
   <div class="row">
-
-      <div *ngFor="let keg of kegs" class="card col-lg-4 text-white bg-dark mb-1">
-        <div class="card-header">Brand : {{keg.brand}}</div>
+      <div *ngFor="let keg of kegs" [class]="priceCode(keg)">
+        <div class="card-header">{{keg.brand}}</div>
         <div class="card-body">
-          <h5 class="card-title">Name : {{keg.name}}</h5>
-          <p class="card-text">Style : {{keg.style}}</p>
-          <p class="card-text">Price : ${{keg.price}}</p>
-          <p class="card-text">Alcohol Content : {{keg.alcoholContent}}% ABV</p>
-          <p class="card-text">Quantity Remaining : {{keg.pints}}</p>
+          <h5 class="card-title">Name: {{keg.name}}</h5>
+          <p class="card-text">Style: {{keg.style}}</p>
+          <p class="card-text">Price: ${{keg.price}}</p>
+          <p class="card-text">Alcohol Content: {{keg.alcoholContent}}% ABV</p>
+          <p class="card-text" [class]="alert(keg)">Quantity Remaining: {{keg.pints}}</p>
         </div>
         <button type="button" class="btn btn-danger mb-1" (click)="editKeg(keg)">Edit Keg Info</button>
         <button type="button" class="btn btn-warning mb-1" (click)="pour(keg)" name="button">Pour A Pint</button>
