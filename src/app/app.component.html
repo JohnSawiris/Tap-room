@@ -1,8 +1,16 @@
 <div class="container">
   <h1>Welcome to {{title}}</h1>
   <app-add-keg [kegs]="kegs"></app-add-keg>
+  <select class="mb-2" (change)="onChange($event.target.value)">
+    <option value=0>Show all beers</option>
+    <option value=20>Show only beers under $20</option>
+    <option value=35>Show only beers under $35</option>
+    <option value=60>Show only beers under $60</option>
+    <option value=90>Show only beers under $90</option>
+  </select>
+
   <div class="row">
-      <div *ngFor="let keg of kegs" [class]="priceCode(keg)">
+      <div *ngFor="let keg of kegs | priceFilter:filterByPrice" [class]="priceCode(keg)">
         <div class="card-header">{{keg.brand}}</div>
         <div class="card-body">
           <h5 class="card-title">Name: {{keg.name}}</h5>
@@ -12,9 +20,14 @@
           <p class="card-text" [class]="alert(keg)">Quantity Remaining: {{keg.pints}}</p>
         </div>
         <button type="button" class="btn btn-danger mb-1" (click)="editKeg(keg)">Edit Keg Info</button>
-        <button type="button" class="btn btn-warning mb-1" (click)="pour(keg)" name="button">Pour A Pint</button>
+        <select class="form-control mb-1" #amt>
+          <option value="">Select amount</option>
+          <option [value]="1">Pint</option>
+          <option [value]="2">Growler</option>
+          <option [value]="4">Large growler</option>
+        </select>
+        <button type="button" class="btn btn-warning mb-1" (click)="pour(keg, amt.value)" name="button">Pour</button>
       </div>
-
   </div>
 
   <div>
@@ -45,6 +58,9 @@
       </div>
       <button type='button' class="btn btn-primary" (click)="saveChanges()">
         Save
+      </button>
+      <button type='button' class="btn btn-primary" (click)="toggleDisplay()">
+        Close
       </button>
     </form>
   </div>

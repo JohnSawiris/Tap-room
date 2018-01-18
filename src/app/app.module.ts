@@ -4,14 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AddKegComponent } from './add-keg/add-keg.component';
-import { EditKegComponent } from './edit-keg/edit-keg.component';
+import { PriceFilterPipe } from './price-filter.pipe';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddKegComponent,
-    EditKegComponent
+    PriceFilterPipe
   ],
   imports: [
     BrowserModule,

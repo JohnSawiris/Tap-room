@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Keg } from '../app.component';
 
@@ -7,24 +7,26 @@ import { Keg } from '../app.component';
   templateUrl: './add-keg.component.html',
   styleUrls: ['./add-keg.component.css']
 })
+
 export class AddKegComponent implements OnInit {
 
-  @Input() kegs;
-  @Input() display;
+  @Input() kegs: Keg[];
+
+  display: boolean = false;
+
+  toggle() {
+    this.display = !this.display;
+  }
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggleDisplay() {
-    this.display = !this.display;
-  }
-
   add(name, brand, style, price, alcohol, qty){
-    const newKeg = new Keg(name, brand, style, price, alcohol, qty);
+    const newKeg: Keg = new Keg(name, brand, style, price, alcohol, qty);
     this.kegs.push(newKeg)
-    this.toggleDisplay();
+    this.toggle();
   }
 
 }

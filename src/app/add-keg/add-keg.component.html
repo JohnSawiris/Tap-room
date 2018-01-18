@@ -1,6 +1,6 @@
 <button type="button" class="btn btn-success mb-2"
 *ngIf="!display"
-(click)="toggleDisplay()">Add a new Keg</button>
+(click)="toggle()">Add a new Keg</button>
 <div id="addKegForm">
   <div class="mb-3">
   <form *ngIf="display" class="center">
@@ -29,15 +29,15 @@
       <input type="text" class="form-control" #quantity />
     </div>
     <button type='button' class="btn btn-primary" (click)="add(kegName.value, brand.value, style.value, alcohol.value, price.value, quantity.value);
-    kegName.value='';
-    brand.value='';
-    style.value='';
-    alcohol.value='';
-    price.value='';
-    quantity.value=''">
+      kegName.value='';
+      brand.value='';
+      style.value='';
+      alcohol.value='';
+      price.value='';
+      quantity.value=''">
       Add this keg
     </button>
-    <button type="button" class="btn btn-danger" name="button" (click)="toggleDisplay()">Close</button>
+    <button type="button" class="btn btn-danger" name="button" (click)="toggle()">Close</button>
   </form>
 </div>
 </div>
