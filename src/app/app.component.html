@@ -8,7 +8,7 @@
           <h5 class="card-title">Name: {{keg.name}}</h5>
           <p class="card-text">Style: {{keg.style}}</p>
           <p class="card-text">Price: ${{keg.price}}</p>
-          <p class="card-text">Alcohol Content: {{keg.alcoholContent}}% ABV</p>
+          <p [class]="highABV(keg)">Alcohol Content: {{keg.alcoholContent}}% ABV</p>
           <p class="card-text" [class]="alert(keg)">Quantity Remaining: {{keg.pints}}</p>
         </div>
         <button type="button" class="btn btn-danger mb-1" (click)="editKeg(keg)">Edit Keg Info</button>
@@ -18,7 +18,7 @@
   </div>
 
   <div>
-    <form *ngIf="display">
+    <form *ngIf="display" class="center">
       <div class="form-group">
         <label>Keg:</label>
         <input type="text" class="form-control" name="name" [(ngModel)]="selectedKeg.name"/>

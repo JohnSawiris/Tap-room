@@ -48,6 +48,16 @@ export class AppComponent {
   alert(currentKeg) {
     if (currentKeg.pints < 10) {
       return "bg-danger";
+    } else {
+      return "";
+    }
+  }
+
+  highABV(currentKeg) {
+    if (currentKeg.alcoholContent >= 7) {
+      return "red text-card";
+    } else {
+      return "text-card";
     }
   }
 
