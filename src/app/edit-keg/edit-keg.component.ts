@@ -12,15 +12,27 @@ export class EditKegComponent implements OnInit {
 
   @Input() childKegs: Keg[];
   @Input() childDisplay: boolean;
+  @Input() filter: number;
 
-  @Output() editIsClicked = new EventEmitter();
+  selectedKeg: Keg = null;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  pour(clickedKeg, amt) {
+    clickedKeg.pints -= amt;
+  }
 
+  toggle() {
+    this.childDisplay = !this.childDisplay;
+  }
+
+  editKeg(clickedKeg) {
+    this.selectedKeg = clickedKeg;
+    this.childDisplay = true;
+  }
 
   priceCode(currentKeg) {
     if(currentKeg.price > 0 && currentKeg.price <= 19) {
@@ -36,9 +48,9 @@ export class EditKegComponent implements OnInit {
     }
   }
 
-  editButton(clicked) {
-    this.editIsClicked.emit(clicked)
-  }
+  // closeIsClicked() {
+  //   this.childToggleDisplay.emit()
+  // }
 
   highABV(currentKeg) {
     if (currentKeg.alcoholContent >= 7) {

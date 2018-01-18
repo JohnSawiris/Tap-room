@@ -17,12 +17,6 @@ export class AppComponent {
 
   ];
 
-  selectedKeg: Keg = this.kegs[0];
-
-  pour(clickedKeg, amt) {
-    clickedKeg.pints -= amt;
-  }
-
   display: boolean = false;
 
   title: string = 'Tap-Room';
@@ -33,11 +27,6 @@ export class AppComponent {
 
   saveChanges() {
     this.display = false;
-  }
-
-  editKeg(clickedKeg) {
-    this.selectedKeg = clickedKeg;
-    this.display = true;
   }
 
   filterByPrice: number = 0;
