@@ -14,7 +14,9 @@ export class AppComponent {
     new Keg('Baerlic Primeval', 'Baerlic', 'Brown Ale', 35, 6.8, 124),
     new Keg('Bend Darth Lager', 'Bend Brewing Company', 'Dark Lager', 56, 5.0, 124),
     new Keg('Boneyard Enzymatic', 'Boneyard Beer Company', 'IPA', 90, 7.0, 124),
-
+    new Keg('Locust Original Dry', 'Locust Original Dry', 'Common Cider', 200, ​ 6.0, 124),
+    new Keg('De La Senne Taras Boulba', 'De La Senne Taras Boulba', 'Belgian Pale Ale', 45, 4.5, 124),
+    new Keg('Level And The Crowd Goes Mild', 'Level And The Crowd Goes Mild', 'Dark Mild', 90, 4.5, 124)
   ];
 
   display: boolean = false;

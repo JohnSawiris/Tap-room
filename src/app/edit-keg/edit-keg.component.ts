@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 import { Keg } from '../app.component';
 @Component({
@@ -7,8 +7,6 @@ import { Keg } from '../app.component';
   styleUrls: ['./edit-keg.component.css']
 })
 export class EditKegComponent implements OnInit {
-
-
 
   @Input() childKegs: Keg[];
   @Input() childDisplay: boolean;
@@ -47,10 +45,6 @@ export class EditKegComponent implements OnInit {
       return "card col-lg-4 text-white bg-dark mb-1";
     }
   }
-
-  // closeIsClicked() {
-  //   this.childToggleDisplay.emit()
-  // }
 
   highABV(currentKeg) {
     if (currentKeg.alcoholContent >= 7) {
