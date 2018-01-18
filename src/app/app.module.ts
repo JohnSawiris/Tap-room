@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AddKegComponent } from './add-keg/add-keg.component';
 import { PriceFilterPipe } from './price-filter.pipe';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
 
 
 
@@ -12,7 +13,8 @@ import { PriceFilterPipe } from './price-filter.pipe';
   declarations: [
     AppComponent,
     AddKegComponent,
-    PriceFilterPipe
+    PriceFilterPipe,
+    EditKegComponent
   ],
   imports: [
     BrowserModule,
